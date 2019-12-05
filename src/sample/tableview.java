@@ -1,6 +1,9 @@
 package sample;
 
+import javafx.beans.property.Property;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableDoubleValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -81,8 +84,10 @@ public class tableview {
         kuratorColumn.setCellValueFactory(new PropertyValueFactory<Students, String>("kurator"));
         table.getColumns().add(kuratorColumn);
 
+
         TableColumn<Students, Double> sredniyballColumn = new TableColumn<Students, Double>("Средний балл");
-        sredniyballColumn.setCellValueFactory(new PropertyValueFactory<Students, Double>("sredniyball"));
+        sredniyballColumn.setCellValueFactory(new PropertyValueFactory<Students, Double>("zachotka"));
+        sredniyballColumn.setCellValueFactory(p -> new ReadOnlyObjectWrapper<Double>(p.getValue().getZachotka().getSredniyBal()));
         table.getColumns().add(sredniyballColumn);
 
         nameColumn.setSortType(TableColumn.SortType.DESCENDING);
