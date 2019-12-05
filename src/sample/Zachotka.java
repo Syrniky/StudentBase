@@ -46,7 +46,10 @@ public class Zachotka {
         renewSredniyBal();
     }
 
-    public void addOzinka(Ozinka ozinka) { ozinky.add(ozinka); }
+    public void addOzinka(Ozinka ozinka) {
+        ozinky.add(ozinka);
+        renewSredniyBal();
+    }
 
     public double getSredniyBal() { return sredniyBal; }
 
