@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -14,6 +15,16 @@ import java.util.ArrayList;
 public class SearchResults {
 
     public static void show(ArrayList<Students> students) {
+        if (students == null || students.size() == 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText("Помилка при пошуку студента");
+            alert.setContentText("Нікого не знайдено");
+            alert.showAndWait();
+            return;
+        }
+
+
         Stage resultWindow = new Stage();
         Pane root = new Pane();
         Scene scene = new Scene(root);

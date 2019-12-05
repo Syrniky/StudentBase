@@ -30,7 +30,7 @@ public class tableview {
     public static void actors(){
         st.add(new Students("Давиденко Ілля Сергійович", 17, "2ПІ-18б", 2, "Денисюк Алла Василівна", 4.2));
         st.add(new Students("Богомазов Данил Вікторович", 18, "2ПІ-18б", 2, "Денисюк Алла Василівна", 3.6));
-        st.add(new Students("Симон Андрій Дмитрийович", 16, "2ПІ-18б", 2, "Денисюк Алла Василівна", 3.2));
+        st.add(new Students("Симон Андрій Дмитрович", 16, "2ПІ-18б", 2, "Денисюк Алла Василівна", 3.2));
         st.add(new Students("Ісаков Андрій ХХ", 18, "1ПІ-18б", 2, "Войтко Вікторія Володимирівна", 4.8));
 
     }
@@ -86,7 +86,6 @@ public class tableview {
 
 
         TableColumn<Students, Double> sredniyballColumn = new TableColumn<Students, Double>("Средний балл");
-        sredniyballColumn.setCellValueFactory(new PropertyValueFactory<Students, Double>("zachotka"));
         sredniyballColumn.setCellValueFactory(p -> new ReadOnlyObjectWrapper<Double>(p.getValue().getZachotka().getSredniyBal()));
         table.getColumns().add(sredniyballColumn);
 
